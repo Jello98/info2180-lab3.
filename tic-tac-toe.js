@@ -25,8 +25,10 @@ window.onload = function (){
 			this.innerHTML = "X";
 			console.log("Player X Clicked Square ", j)
 			win();
+			/* was trying to enter a break here where i would set up an if statement if a winner 
+			was decided so that it wouldnt allow u to play anymore but i kept getting an error */
 			tracker+=1;
-			this.classList.add(".square.X");
+			this.classList.add(".square","X");
 			track.push("X");
 			
 		}else{
@@ -35,7 +37,7 @@ window.onload = function (){
 			console.log("Square " + j + " was Clicked")
 			win();
 			tracker+=1;
-			this.classList.add(".square.X");
+			this.classList.add(".square","O");
 			track.push("O");
 			
 
@@ -59,7 +61,7 @@ window.onload = function (){
 
 
 	}
-
+// used to determine the winner of the tic tac toe game in the various ways u can win 
 function win(){
 
 	var square1 = squares[0];
@@ -71,6 +73,9 @@ function win(){
 	var square7 = squares[6];
 	var square8 = squares[7];
 	var square9 = squares[8];
+
+	/* also wanted but a break after each of these so that if one of the criteras were met it would stop and not change the winner 
+	if someone else played */
 
 
 	if(square1.innerHTML !== "" && square1.innerHTML === square2.innerHTML && square1.innerHTML === square3.innerHTML ){
